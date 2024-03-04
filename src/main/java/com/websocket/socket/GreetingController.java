@@ -16,7 +16,7 @@ public class GreetingController {
     public void greeting(String message) throws Exception {
         System.out.println("ctrl");
         Thread.sleep(1000); // simulated delay
-          simpMessagingTemplate.convertAndSend("/topic/helloo", message );
+          simpMessagingTemplate.convertAndSend("/topic/hello", message );
 //        return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
     }
 
