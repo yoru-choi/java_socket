@@ -20,13 +20,5 @@ public class GreetingController {
 //        return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
     }
 
-//    @Autowired
-//    private SimpMessagingTemplate simpMessagingTemplatee;
-//    @MessageMapping("/helloo")
-//    public void greetingg(String message) throws Exception {
-//        System.out.println("ctrl");
-//        Thread.sleep(1000); // simulated delay
-//        simpMessagingTemplatee.convertAndSend("/topic/helloo", message );
-////        return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
-//    }
+
 }

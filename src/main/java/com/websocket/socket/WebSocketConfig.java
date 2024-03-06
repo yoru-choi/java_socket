@@ -1,6 +1,9 @@
 package com.websocket.socket;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import org.springframework.messaging.simp.config.ChannelRegistration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
@@ -9,6 +12,14 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker //웹 소켓 메시지를 다룰 수 있게 허용
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+
+
+
+    @Override
+    public void configureClientInboundChannel(ChannelRegistration registration) {
+        registration.interceptors(socketIntercepter());
+    }
+
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
@@ -22,5 +33,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 //        registry.addEndpoint("/gs-guide-websocket").withSockJS();
         // 커넥션을 맺는 경로 설정. 만약 WebSocket을 사용할 수 없는 브라우저라면 다른 방식을 사용하도록 설정
     }
+
+
+
 
 }

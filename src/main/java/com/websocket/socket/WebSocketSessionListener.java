@@ -13,7 +13,7 @@ import java.util.Set;
 @Component
 public class WebSocketSessionListener {
 
-    private static final int MAX_CONNECTIONS = 1;
+    private static final int MAX_CONNECTIONS = 3;
     private Set<String> sessions = Collections.synchronizedSet(new HashSet<>());
 
     @EventListener
